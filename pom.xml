@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>hllocicd</artifactId>
+	<artifactId>test-jenkins-ci</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>hllocicd</name>
+	<name>test-jenkins-ci</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.3.0-20210322</app.runtime>
+		<app.runtime>4.3.0</app.runtime>
 		<mule.maven.plugin.version>3.4.2</mule.maven.plugin.version>
 	</properties>
 
@@ -31,17 +31,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployement>
-						<muleVersion>${app.runtime}</muleVersion>
-						<username>myTDF1</username>
-						<password>Mulesoft@111213</password>
-						<environment>sandbox</environment>
+					<cloudHubDeployment> 
+						<muleVersion>${app.runtime}</muleVersion> 
+						<username>myTDF1</username> 
+						<password>Mulesoft@111213</password> 
+						<environment>Sandbox</environment> 
+						<!-- <region>eu-central-1</region>  -->
 						<objectStoreV2>true</objectStoreV2>
 						<workerType>Micro</workerType>
-						<workers>1</workers>
-						<uri>https://anypoint.mulesoft.com/</uri>
-						<applicationName>test-cicd-1</applicationName>
-					</cloudHubDeployement>
+						<workers>1</workers> 
+						<uri>https://anypoint.mulesoft.com</uri>; 
+						<applicationName>test-jenkins-ci-app</applicationName> 
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
